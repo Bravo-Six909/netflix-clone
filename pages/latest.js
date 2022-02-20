@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react'
 import { useRouter } from 'next/router';
-import MovieItem from '../components/MovieItem';
 import Navbar from '../components/Navbar';
 import Head from 'next/head';
 
@@ -20,20 +19,19 @@ const latest = () => {
     }, [])
     return (
         <>
-        <Head>
-        <title>Netflix | Latest</title>
-        <link rel="icon" href="/netflix_logo.ico" />
-      </Head>
-        <Navbar />
-        <div className='flex flex-wrap w-screen justify-center'>
-            {console.log(data)}
-            {data.map((item, i) => {
-                return (
-                    // <MovieItem key={i} id={item?.id} backPhoto={item.backdrop_path} title={item.title} />
-                    <img onClick={()=> router.push(`/details/${item?.id}`)} className='m-4 cursor-pointer hover:scale-110 ease-linear duration-300' src={`https://image.tmdb.org/t/p/w342${item.poster_path}`}/>
-                );
-            })}
-        </div>
+            <Head>
+                <title>Netflix | Latest</title>
+                <link rel="icon" href="/netflix_logo.ico" />
+            </Head>
+            <Navbar />
+            <div className='flex flex-wrap w-screen justify-center'>
+                {console.log(data)}
+                {data.map((item, i) => {
+                    return (
+                        <img key={i} onClick={() => router.push(`/details/${item?.id}`)} className='m-4 cursor-pointer hover:scale-110 ease-linear duration-300' src={`https://image.tmdb.org/t/p/w342${item.poster_path}`} />
+                    );
+                })}
+            </div>
         </>
     )
 }

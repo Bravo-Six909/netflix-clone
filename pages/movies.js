@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react'
 import { useRouter } from 'next/router';
-import MovieItem from '../components/MovieItem';
 import Navbar from '../components/Navbar';
 import Head from 'next/head';
 
@@ -29,7 +28,7 @@ const movies = () => {
             {console.log(data)}
             {data.map((item, i) => {
                 return (
-                    <img onClick={()=> router.push(`/details/${item?.id}`)} className='m-4 cursor-pointer hover:scale-110 ease-linear duration-300' src={`https://image.tmdb.org/t/p/w342${item.poster_path}`}/>
+                    <img key={i} onClick={()=> router.push(`/details/${item?.id}`)} className='m-4 cursor-pointer hover:scale-110 ease-linear duration-300' src={`https://image.tmdb.org/t/p/w342${item.poster_path}`}/>
                 );
             })}
         </div>

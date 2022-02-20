@@ -44,6 +44,4 @@ const Preview = () => {
     )
 }
 
-export default Preview
-
-// style={{"background": `linear-gradient(#e66465, #9198e5) url(${photo})`,position: "relative",height: "100vh",width: "100vw",backgroundRepeat: "no-repeat", backgroundSize: "cover"}}
+export default Preview;

@@ -10,10 +10,6 @@ const Navbar = () => {
 
     const router = useRouter(); 
 
-    const active = {
-        color: "red",
-    }
-
     return (
         <>
             <div className='bg-black w-screen sticky top-0 z-30'>
