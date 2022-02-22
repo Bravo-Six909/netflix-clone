@@ -16,7 +16,7 @@ const Navbar = () => {
                 <ul className='flex items-center justify-between'>
                     <div className='flex items-center justify-evenly w-1/3'>
                         <li onClick={()=> {router.push("/")}} className='cursor-pointer hover:text-red-600'>
-                            <Image src="/netflix-logo.svg" height={50} width={50} />
+                            <Image src="/netflix-logo.svg" height={50} width={50} alt="Logo"/>
                         </li>
                         <li onClick={()=> {router.push("/")}} className='hidden md:block cursor-pointer hover:text-red-600'>
                             Home

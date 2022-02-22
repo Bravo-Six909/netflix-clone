@@ -21,7 +21,7 @@ const error = () => {
             <button onClick={()=>{router.push("/")}} className='px-4 py-2 border-2 border-white rounded-lg text-white'>Go Home</button>
           </div>
           <div>
-            <img src="/error.svg" />
+            <img src="/error.svg" alt='error'/>
           </div>
         </div>
       </div>

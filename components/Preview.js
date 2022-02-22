@@ -24,7 +24,7 @@ const Preview = () => {
     return (
         <>
             <div className='relative '>
-                <img src={photo} className="w-full h-full"/>
+                <img src={photo} className="w-full h-full" alt={data?.title}/>
                 <div className='h-full w-1/2 flex flex-col justify-end items-start px-4 absolute top-0'>
                     <h1 className='text-6xl mb-2'>{data?.title}</h1>
                     <p className='mb-2'>{data?.overview}</p>

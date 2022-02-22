@@ -3,7 +3,6 @@ import { useRouter } from 'next/router'
 import { FaPlay } from "react-icons/fa";
 import Navbar from '../../components/Navbar';
 import Head from 'next/head';
-import Movie from '../../components/Movie';
 import MovieItem from '../../components/MovieItem';
 import { TailSpin } from 'react-loader-spinner';
 
@@ -42,7 +41,7 @@ const id = () => {
                 color='#f20001'
                 ariaLabel='loading' /></div> : <div>
                 <div className='relative '>
-                    <img src={`https://image.tmdb.org/t/p/original${data?.backdrop_path}`} className="w-full h-full" />
+                    <img src={`https://image.tmdb.org/t/p/original${data?.backdrop_path}`} className="w-full h-full" alt={data?.title}/>
                     <div className='h-full w-1/2 flex flex-col justify-end items-start px-4 absolute top-0'>
                         <p className='text-yellow-400'>You're watching</p>
                         <h1 className='text-6xl mb-2'>{data?.title}</h1>

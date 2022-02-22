@@ -16,7 +16,7 @@ const signin = () => {
     <>
       <div className="bg-siginbg h-screen w-screen relative">
         <div className='flex justify-between items-center mx-8'>
-          <img src="Netflix-Logo.wine.svg" className='w-44' />
+          <img src="Netflix-Logo.wine.svg" className='w-44' alt='Netlix Logo'/>
           <div>
             {/* <select className='mr-4'>
               <option value="english">English</option>
