@@ -2,9 +2,9 @@ import React from 'react'
 
 // {`bg-url[/${signin.jpg}] h-screen w-screen`}
 
-const signin = () => {
+const Signin = () => {
 
-  const url = "url(" + signin.jpg + ")";
+  // const url = "url(" + signin.jpg + ")";
 
   // `url(${signin.jpg})`
 
@@ -36,4 +36,4 @@ const signin = () => {
   )
 }
 
-export default signin
+export default Signin

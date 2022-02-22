@@ -3,7 +3,7 @@ import { useRouter } from 'next/router';
 import Navbar from '../components/Navbar';
 import Head from 'next/head';
 
-const latest = () => {
+const Latest = () => {
     const [data, setData] = useState([]);
     const router = useRouter();
 
@@ -36,4 +36,4 @@ const latest = () => {
     )
 }
 
-export default latest
+export default Latest

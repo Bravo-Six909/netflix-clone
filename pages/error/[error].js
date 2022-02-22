@@ -4,7 +4,7 @@ import { HiMenuAlt1 } from "react-icons/hi";
 import { useRouter } from 'next/router';
 
 
-const error = () => {
+const Error = () => {
     const router = useRouter();
     const errMsg = router.query.error;
     return (
@@ -31,4 +31,4 @@ const error = () => {
     )
 }
 
-export default error;
+export default Error;

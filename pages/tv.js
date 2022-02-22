@@ -3,7 +3,7 @@ import { useRouter } from 'next/router';
 import Navbar from '../components/Navbar';
 import Head from 'next/head';
 
-const movies = () => {
+const Tv = () => {
     const [data, setData] = useState([]);
     const [datas, setDatas] = useState([]);
     const router = useRouter();
@@ -52,4 +52,4 @@ const movies = () => {
     )
 }
 
-export default movies
+export default Tv
