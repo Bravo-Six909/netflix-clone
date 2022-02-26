@@ -1,4 +1,4 @@
-import { GoogleAuthProvider, signInWithPopup } from 'firebase/auth';
+import { GoogleAuthProvider,signInWithRedirect } from 'firebase/auth';
 import Head from 'next/head'
 import React from 'react';
 import { MdKeyboardArrowRight } from 'react-icons/md' 
@@ -11,7 +11,7 @@ const Login = () => {
 
     const provider = new GoogleAuthProvider();
     const signInWithGoogle = () => {
-        signInWithPopup(auth , provider)
+        signInWithRedirect(auth,provider)
     } 
 
 
