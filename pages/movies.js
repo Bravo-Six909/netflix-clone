@@ -3,18 +3,12 @@ import { useRouter } from 'next/router';
 import Navbar from '../components/Navbar';
 import Head from 'next/head';
 
-const Movies = () => {
+const Movies = ({jsonData}) => {
     const [data, setData] = useState([]);
     const router = useRouter();
 
     useEffect(() => {
-
-        fetch(`https://api.themoviedb.org/3/movie/popular?api_key=${process.env.NEXT_PUBLIC_API_KEY}`)
-            .then((res) => res.json())
-            .then((res) => setData(res.results))
-            .catch((err) => {
-                router.push(`/error/${err}`);
-            })
+        setData(jsonData.results);
 
     }, [])
     return (
@@ -36,4 +30,14 @@ const Movies = () => {
     )
 }
 
-export default Movies
+export default Movies;
+export async function getServerSideProps(){
+    const data = await fetch(`https://api.themoviedb.org/3/movie/popular?api_key=${process.env.NEXT_PUBLIC_API_KEY}`);
+    const jsonData = await data.json();
+
+    return{
+        props: {
+            jsonData
+        }
+    }
+}

@@ -3,29 +3,15 @@ import { useRouter } from 'next/router';
 import Navbar from '../components/Navbar';
 import Head from 'next/head';
 
-const Tv = () => {
+const Tv = ({jsonDataHoll,jsonDataBoll}) => {
     const [data, setData] = useState([]);
     const [datas, setDatas] = useState([]);
     const router = useRouter();
 
     useEffect(() => {
 
-        fetch(`https://api.themoviedb.org/3/tv/popular?api_key=${process.env.NEXT_PUBLIC_API_KEY}`)
-            .then((res) => res.json())
-            .then((res) => setData(res.results))
-            .catch((err) => {
-                router.push(`/error/${err}`);
-            })
-
-    }, [])
-    useEffect(() => {
-
-        fetch(`https://api.themoviedb.org/3/tv/popular?api_key=${process.env.NEXT_PUBLIC_API_KEY}&language=hi-IN&region=IN&primary_release_year=2021&with_original_language=hi`)
-            .then((res) => res.json())
-            .then((res) => setDatas(res.results))
-            .catch((err) => {
-                router.push(`/error/${err}`);
-            })
+        setData(jsonDataHoll.results)
+        setDatas(jsonDataBoll.results)
 
     }, [])
     return (
@@ -52,4 +38,23 @@ const Tv = () => {
     )
 }
 
-export default Tv
+export default Tv;
+
+export async function getServerSideProps() {
+    const dataHoll = await fetch(`https://api.themoviedb.org/3/tv/popular?api_key=${process.env.NEXT_PUBLIC_API_KEY}`);
+    const jsonDataHoll = await dataHoll.json();
+
+
+    const dataBoll = await fetch(`https://api.themoviedb.org/3/tv/popular?api_key=${process.env.NEXT_PUBLIC_API_KEY}&language=hi-IN&region=IN&primary_release_year=2021&with_original_language=hi`)
+    const jsonDataBoll = await dataBoll.json();
+
+
+    return{
+        props: {
+            jsonDataHoll,
+            jsonDataBoll,
+        }
+    }
+
+
+}

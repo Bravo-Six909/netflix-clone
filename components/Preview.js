@@ -23,8 +23,8 @@ const Preview = () => {
     const photo = "https://image.tmdb.org/t/p/original" + data.backdrop_path;
     return (
         <>
-            <div className='relative '>
-                <img src={photo} className="w-full h-full" alt={data?.title}/>
+            <div className='relative backg-imgs'>
+                <img src={photo} className="w-full h-full " alt={data?.title}/>
                 <div className='h-full w-1/2 flex flex-col justify-end items-start px-4 absolute top-0'>
                     <h1 className='text-6xl mb-2'>{data?.title}</h1>
                     <p className='mb-2'>{data?.overview}</p>
@@ -34,7 +34,7 @@ const Preview = () => {
                             <strong className='text-black'>Play</strong>
                         </div>
                         <div className='flex items-center justify-center bg-gray-600 py-2 px-6 mx-4 cursor-pointer rounded'>
-                            <MdInfoOutline className='mr-2' />
+                            <MdInfoOutline className='mr-2'  size={20}/>
                             <strong>More Info</strong>
                         </div>
                     </div>

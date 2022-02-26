@@ -34,4 +34,8 @@ const Movie = ({url,title}) => {
     )
 }
 
-export default Movie
+export default Movie;
+
+// async function getServerSideProps() {
+//     const res = await fetch(ur)
+// }

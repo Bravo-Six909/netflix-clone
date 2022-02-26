@@ -31,6 +31,9 @@ const Id = () => {
 
     return (
         <>
+        {console.log(similarData?.results)}
+        {console.log(data?.results)}
+        {console.log(ids)}
             <Head>
                 <title>Netflix | {data?.title}</title>
                 <link rel="icon" href="/netflix_logo.ico" />
@@ -81,4 +84,4 @@ const Id = () => {
     )
 }
 
-export default Id
+export default Id;
