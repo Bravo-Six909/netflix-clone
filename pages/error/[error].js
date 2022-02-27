@@ -11,7 +11,7 @@ const Error = () => {
         <div className='h-screen w-screen bg-red-700 flex justify-center items-center overflow-y-hidden'>
             <div className='bg-black px-12' style={{ height: "90vh", width: "94vw" }}>
                 <div className='bg-transparent flex justify-between items-center'>
-                    <Image src="/navbar.png" height={100} width={200} />
+                    <Image src="/navbar.png" height={100} width={200} alt="Logo"/>
                     <div className='h-14 w-14 flex justify-center items-center cursor-pointer rounded-full hover:bg-gray-800'>
                         <HiMenuAlt1 className='h-10 w-10' />
                     </div>
