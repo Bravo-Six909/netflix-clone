@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react'
 import { useRouter } from 'next/router';
 import Navbar from '../components/Navbar';
 import Head from 'next/head';
+import Image from 'next/image';
 
 const Latest = ({jsonData}) => {
     const [data, setData] = useState([]);
@@ -20,7 +21,9 @@ const Latest = ({jsonData}) => {
             <div className='flex flex-wrap w-screen justify-center'>
                 {data.map((item, i) => {
                     return (
-                        <img key={i} onClick={() => router.push(`/details/${item?.id}`)} className='m-4 cursor-pointer hover:scale-110 ease-linear duration-300' src={`https://image.tmdb.org/t/p/w342${item.poster_path}`} alt={item?.title}/>
+                        <div className='relative h-[28rem] w-72 m-10'>
+                            <Image layout='fill' key={i} onClick={() => router.push(`/details/${item?.id}`)} className='m-4 cursor-pointer hover:scale-110 ease-linear duration-300' src={`https://image.tmdb.org/t/p/w342${item.poster_path}`} alt={item?.title}/>
+                        </div>
                     );
                 })}
             </div>

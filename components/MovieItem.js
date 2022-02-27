@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import { useRouter } from 'next/router';
 import React from 'react'
 
@@ -6,9 +7,9 @@ const MovieItem = ({ id, backPhoto }) => {
 
     return (
         <>
-        {/* <div className='mx-0.5 h-[150px] w-[300px]'> */}
-            <img onClick={()=> router.push(`/details/${id}`)} className='mx-0.5 h-[150px] w-[300px] cursor-pointer relative hover:scale-110 ease-linear duration-300' src={`https://image.tmdb.org/t/p/original${backPhoto}`} alt={id}/>
-        {/* </div> */}
+            <div className='relative mx-1 h-40 min-w-[300px]'>
+                <Image layout='fill' onClick={() => router.push(`/details/${id}`)} className=' cursor-pointer hover:scale-110 ease-linear duration-300' src={`https://image.tmdb.org/t/p/original${backPhoto}`} alt={id} />
+            </div>
         </>
     )
 }

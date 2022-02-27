@@ -5,6 +5,7 @@ import Navbar from "../../components/Navbar";
 import Head from "next/head";
 import MovieItem from "../../components/MovieItem";
 import { TailSpin } from "react-loader-spinner";
+import Image from "next/image";
 
 const Id = () => {
     const router = useRouter();
@@ -31,9 +32,6 @@ const Id = () => {
 
     return (
         <>
-        {console.log(similarData?.results)}
-        {console.log(data?.results)}
-        {console.log(ids)}
             <Head>
                 <title>Netflix | {data?.title}</title>
                 <link rel="icon" href="/netflix_logo.ico" />
@@ -44,7 +42,9 @@ const Id = () => {
                 color="#f20001"
                 ariaLabel="loading" /></div> : <div>
                 <div className="relative ">
-                    <img src={`https://image.tmdb.org/t/p/original${data?.backdrop_path}`} className="w-full h-full" alt={data?.title}/>
+                    <div className="relative h-screen w-screen">
+                        <Image layout="fill" objectFit="cover" src={`https://image.tmdb.org/t/p/original${data?.backdrop_path}`} className="w-full h-full" alt={data?.title}/>
+                    </div>
                     <div className="h-full w-1/2 flex flex-col justify-end items-start px-4 absolute top-0">
                         <p className="text-yellow-400">You&apos;re watching</p>
                         <h1 className="text-6xl mb-2">{data?.title}</h1>
